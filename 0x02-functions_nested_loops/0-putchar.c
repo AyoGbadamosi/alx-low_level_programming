@@ -1,20 +1,18 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
- * main -  prints _putchar, followed by a new line
- * Return: Always 0 (Success)
- */
-
+* main - Entry point
+* write a program tha prints _putchar, followed by a new line.
+* Return: Always (Success)
+*/
 int main(void)
 {
-	char s[10] = "_putchar";
-	int i = 0;
+	char *ch = "_putchar";
 
-	while (i < 10)
+	while (*ch)
 	{
-		putchar(s[i]);
-		i++;
+		_putchar(*ch);
+		ch++;
 	}
-	putchar('\n');
-	return (0);
+	_putchar('\n');
+return (0);
 }
