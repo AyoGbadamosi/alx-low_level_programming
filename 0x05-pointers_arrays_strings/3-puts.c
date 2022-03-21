@@ -1,12 +1,17 @@
 #include "main.h"
+/**
+ * _puts - prints string
+ * @str: string Return: void
+ */
 void _puts(char *str)
 {
-	int count = 0;
+	int i = 0;
 
-	while (str[count])
+	while (str[i] != '\0')
 	{
-		_putchar(str[count]);
-		count++;
+		_putchar(str[i]);
+		i++;
 	}
+
 	_putchar('\n');
 }
