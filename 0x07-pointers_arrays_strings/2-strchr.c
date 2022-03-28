@@ -1,11 +1,12 @@
 #include "main.h"
-#include <stddef.h>
+#define NULL 0
 /**
  * _strchr - locates a character in a string
  * @s: string
- * @c: character
- * Returns: a pointer
+ * @c: character to search
+ * Return: pointer to first occurrence of c
  */
+
 char *_strchr(char *s, char c)
 {
 	int i = 0;
