@@ -2,10 +2,9 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * main - Entry point, prints program name
- * @argc; Argument count
+ * main - prints program name
+ * @argc: Argument count
  * @argv: Argument vector
- * @i: counter
  * Return: 0
  */
 int main(int argc, char *argv[])
