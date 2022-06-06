@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <limits.h>
 
 /**
  * _is_zero - determines if any number is zero
@@ -114,6 +115,8 @@ int main(int argc, char *argv[])
 			lnout--;
 			free(nout), nout = malloc(lnout + 1), nout = _initialize_array(nout, lnout);
 			k = lnout - 1, i = ln1 - 1, j = ln2 - 1, ca = addl = 0;
+			if (nout == NULL)
+				return (NULL);
 		}
 		if (j >= 0)
 		{
