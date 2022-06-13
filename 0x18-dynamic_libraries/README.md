@@ -22,4 +22,8 @@ char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 
 
-1-create_dynamic_lib.sh: Create a script that creates a dynamic library called liball.so from all the .c files that are in the current directory.
+1-create_dynamic_lib.sh: Create a script that creates a dynamic library called liball.so from all the .c files that are in the current directoryR
+
+100-operations.so: Create a dynamic library that contains C functions that can be called from Python.
+
+101-make_me_win.sh: I bought a ticket for the Giga Millions and chose these numbers: 9, 8, 10, 24, 75 + 9. If you could run two commands on the server where the Giga Millions program runs, could you make me win the Jackpot?
