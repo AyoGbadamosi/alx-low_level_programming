@@ -1,41 +1,64 @@
 #include "search_algos.h"
 
 /**
- * advanced_binary - returns the index of the first value if the value
- * appears more than once
- * @array: pointer to the first element of the array to search in
- * @size: number of elements in array
- * @value: value to search for
- * Return: index where value is located
+ * rec_search - searches for a value in an array of
+ * integers using the Binary search algorithm
+ *
+ *
+ * @array: input array
+ * @size: size of the array
+ * @value: value to search in
+ * Return: index of the number
+ */
+int rec_search(int *array, size_t size, int value)
+{
+	size_t half = size / 2;
+	size_t i;
+
+	if (array == NULL || size == 0)
+		return (-1);
+
+	printf("Searching in array");
+
+	for (i = 0; i < size; i++)
+		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
+
+	printf("\n");
+
+	if (half && size % 2 == 0)
+		half--;
+
+	if (value == array[half])
+	{
+		if (half > 0)
+			return (rec_search(array, half + 1, value));
+		return ((int)half);
+	}
+
+	if (value < array[half])
+		return (rec_search(array, half + 1, value));
+
+	half++;
+	return (rec_search(array + half, size - half, value) + half);
+}
+
+/**
+ * advanced_binary - calls to rec_search to return
+ * the index of the number
+ *
+ * @array: input array
+ * @size: size of the array
+ * @value: value to search in
+ * Return: index of the number
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	size_t i, l, r, m, count;
+	int index;
 
-	l = 0;
-	r = size;
-	if (!array)
+	index = rec_search(array, size, value);
+
+	if (index >= 0 && array[index] != value)
 		return (-1);
-	count = 0;
-	 while (l < r)
-	 {
-		m = (l + r) / 2;
-		printf("Searching in array:");
-		if (l > 0)
-			count = l - 1;
-		for (i = count; i < r; i++)
-		{
-			if (i != r - 1)
-				printf(" %d,", array[i]);
-			else
-				printf(" %d\n", array[i]);
-		}
-		if (array[m] < value)
-			l = m + 1;
-		else if (array[m] > value)
-			r = m;
-		else
-			return (m);
-	}
-	return (-1);
+
+	return (index);
 }
